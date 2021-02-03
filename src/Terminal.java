@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Terminal {
-    List<Person> persons = new ArrayList<>();
+    List<Person> database = new ArrayList<>();
     List<Employee> employees = new ArrayList<>();
     List<Member> members = new ArrayList<>();
 
@@ -12,18 +12,22 @@ public class Terminal {
 
     public void addEmployee(Employee e) {
         employees.add(e);
+        database.add(e);
     }
 
     public void removeEmployee(Employee e) {
         employees.remove(e);
+        database.remove(e);
     }
 
     public void addMember(Member m) {
         members.add(m);
+        database.add(m);
     }
 
     public void removeMember(Member m) {
-
+        members.remove(m);
+        database.remove(m);
     }
 
     public void printEmployees() {
@@ -49,15 +53,15 @@ public class Terminal {
     }
 
     public void updateDatabase() {
-        persons.addAll(employees);
-        persons.addAll(members);
+        database.addAll(employees);
+        database.addAll(members);
     }
 
     public void printDatabase() {
         System.out.println("Employees and Members");
         System.out.println("Name     CPR");
         System.out.println("**********************************************");
-        for (Person p : persons) {
+        for (Person p : database) {
             System.out.println(p.getName() + "     " + p.getCpr());
         }
     }
