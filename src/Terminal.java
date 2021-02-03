@@ -52,11 +52,6 @@ public class Terminal {
         }
     }
 
-    public void updateDatabase() {
-        database.addAll(employees);
-        database.addAll(members);
-    }
-
     public void printDatabase() {
         System.out.println("Employees and Members");
         System.out.println("Name     CPR");
